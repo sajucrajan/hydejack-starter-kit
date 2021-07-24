@@ -1,0 +1,1413 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+publishDir: _site
+dataDir: _data
+pagesDir: ''
+cmsName: git
+models:
+  page_1:
+    type: page
+    label: Page 1
+    match:
+      - _featured_categories/example.md
+      - posts.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: slug
+        label: Slug
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: sitemap
+        label: Sitemap
+      - type: boolean
+        name: grouped
+        label: Grouped
+  page_2:
+    type: page
+    label: Page 2
+    match:
+      - _includes/features.md
+      - _includes/table.md
+      - licenses/Apache-2.0.md
+      - licenses/GPL-3.0.md
+      - licenses/MIT.md
+      - licenses/PRO.md
+      - licenses/W3C-20150513.md
+    fields: []
+  doc:
+    type: page
+    label: Doc
+    folder: docs
+    match: '*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: hide_description
+        label: Hide Description
+      - type: boolean
+        name: sitemap
+        label: Sitemap
+  post:
+    type: page
+    label: Post
+    folder: example/_posts
+    match:
+      - 2012-02-07-example-content.md
+      - 2017-11-23-example-content-ii.md
+      - 2021-02-13-whats-new-in-hydejack-9-1.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: sitemap
+        label: Sitemap
+      - type: boolean
+        name: hide_last_modified
+        label: Hide Last Modified
+      - type: image
+        name: image
+        label: Image
+      - type: object
+        name: accent_image
+        label: Accent Image
+        fields:
+          - type: string
+            name: background
+            label: Background
+          - type: boolean
+            name: overlay
+            label: Overlay
+      - type: string
+        name: accent_color
+        label: Accent Color
+      - type: string
+        name: theme_color
+        label: Theme Color
+      - type: boolean
+        name: invert_sidebar
+        label: Invert Sidebar
+  post_1:
+    type: page
+    label: Post 1
+    folder: example/_posts
+    match:
+      - 2018-06-01-example-content-iii.md
+      - 2020-07-03-introducing-hydejack-9.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: description
+        label: Description
+      - type: object
+        name: image
+        label: Image
+        fields:
+          - type: image
+            name: path
+            label: Path
+          - type: object
+            name: srcset
+            label: Srcset
+            fields:
+              - type: image
+                name: 1060w
+                label: 1060 W
+              - type: image
+                name: 530w
+                label: 530 W
+              - type: image
+                name: 265w
+                label: 265 W
+      - type: list
+        name: related_posts
+        label: Related Posts
+        items:
+          type: string
+      - type: boolean
+        name: sitemap
+        label: Sitemap
+  page_3:
+    type: page
+    label: Page 3
+    match:
+      - 404.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: permalink
+        label: Permalink
+  page_4:
+    type: page
+    label: Page 4
+    match:
+      - NOTICE.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: boolean
+        name: sitemap
+        label: Sitemap
+  page_5:
+    type: page
+    label: Page 5
+    match:
+      - about.md
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: image
+        name: image
+        label: Image
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: hide_description
+        label: Hide Description
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: list
+        name: redirect_from
+        label: Redirect From
+        items:
+          type: string
+  authors:
+    type: data
+    label: Authors
+    file: authors.yml
+    fields:
+      - type: object
+        name: author1
+        label: Author 1
+        fields:
+          - type: markdown
+            name: name
+            label: Name
+          - type: string
+            name: email
+            label: Email
+          - type: text
+            name: about
+            label: About
+          - type: object
+            name: picture
+            label: Picture
+            fields:
+              - type: string
+                name: path
+                label: Path
+              - type: object
+                name: srcset
+                label: Srcset
+                fields:
+                  - type: string
+                    name: 1x
+                    label: 1 X
+                  - type: string
+                    name: 2x
+                    label: 2 X
+          - type: object
+            name: social
+            label: Social
+            fields:
+              - type: markdown
+                name: twitter
+                label: Twitter
+              - type: string
+                name: github
+                label: Github
+      - type: object
+        name: author2
+        label: Author 2
+        fields:
+          - type: markdown
+            name: name
+            label: Name
+          - type: string
+            name: email
+            label: Email
+          - type: text
+            name: about
+            label: About
+          - type: string
+            name: picture
+            label: Picture
+          - type: markdown
+            name: twitter
+            label: Twitter
+          - type: string
+            name: github
+            label: Github
+  social:
+    type: data
+    label: Social
+    file: social.yml
+    fields:
+      - type: object
+        name: email
+        label: Email
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: amazon
+        label: Amazon
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: google
+        label: Google
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: google-plus
+        label: Google Plus
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: google-drive
+        label: Google Drive
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: facebook
+        label: Facebook
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: instagram
+        label: Instagram
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: whatsapp
+        label: Whatsapp
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: spotify
+        label: Spotify
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: telegram
+        label: Telegram
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: twitter
+        label: Twitter
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: vine
+        label: Vine
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: vk
+        label: Vk
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: renren
+        label: Renren
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: sina-weibo
+        label: Sina Weibo
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: rss
+        label: Rss
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: youtube
+        label: Youtube
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: twitch
+        label: Twitch
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: vimeo
+        label: Vimeo
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: lanyrd
+        label: Lanyrd
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: flickr
+        label: Flickr
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: dribbble
+        label: Dribbble
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: behance
+        label: Behance
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: deviantart
+        label: Deviantart
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+          - type: string
+            name: append
+            label: Append
+      - type: object
+        name: 500px
+        label: 500 Px
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: steam
+        label: Steam
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: dropbox
+        label: Dropbox
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: ondrive
+        label: Ondrive
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: github
+        label: Github
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: npm
+        label: Npm
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: basecamp
+        label: Basecamp
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: trello
+        label: Trello
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: wordpress
+        label: Wordpress
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: joomla
+        label: Joomla
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: ello
+        label: Ello
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: blogger
+        label: Blogger
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: tumblr
+        label: Tumblr
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+          - type: string
+            name: append
+            label: Append
+      - type: object
+        name: yahoo
+        label: Yahoo
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: soundcloud
+        label: Soundcloud
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: skype
+        label: Skype
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: reddit
+        label: Reddit
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: hackernews
+        label: Hackernews
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: wikipedia
+        label: Wikipedia
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: linkedin
+        label: Linkedin
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: lastfm
+        label: Lastfm
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: delicious
+        label: Delicious
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: stumbleupon
+        label: Stumbleupon
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: stackoverflow
+        label: Stackoverflow
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: pinterest
+        label: Pinterest
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: xing
+        label: Xing
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: flattr
+        label: Flattr
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+      - type: object
+        name: foursquare
+        label: Foursquare
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: yelp
+        label: Yelp
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: paypal
+        label: Paypal
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: keybase
+        label: Keybase
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+          - type: string
+            name: prepend
+            label: Prepend
+      - type: object
+        name: download
+        label: Download
+        fields:
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: icon
+            label: Icon
+  strings:
+    type: data
+    label: Strings
+    file: strings.yml
+    fields:
+      - type: string
+        name: home
+        label: Home
+      - type: string
+        name: pages
+        label: Pages
+      - type: string
+        name: posts
+        label: Posts
+      - type: string
+        name: about
+        label: About
+      - type: string
+        name: related_posts
+        label: Related Posts
+      - type: string
+        name: other_projects
+        label: Other Projects
+      - type: string
+        name: comments
+        label: Comments
+      - type: string
+        name: jump_to
+        label: Jump To
+      - type: string
+        name: navigation
+        label: Navigation
+      - type: string
+        name: social
+        label: Social
+      - type: string
+        name: links
+        label: Links
+      - type: string
+        name: links_icon
+        label: Links Icon
+      - type: string
+        name: pagination
+        label: Pagination
+      - type: string
+        name: newer
+        label: Newer
+      - type: string
+        name: older
+        label: Older
+      - type: string
+        name: forward
+        label: Forward
+      - type: string
+        name: back
+        label: Back
+      - type: string
+        name: permalink
+        label: Permalink
+      - type: string
+        name: permalink_icon
+        label: Permalink Icon
+      - type: string
+        name: templates
+        label: Templates
+      - type: string
+        name: present
+        label: Present
+      - type: string
+        name: toc
+        label: Toc
+      - type: string
+        name: note
+        label: Note
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: search
+        label: Search
+      - type: string
+        name: search_placeholder
+        label: Search Placeholder
+      - type: string
+        name: loading
+        label: Loading
+      - type: string
+        name: redirecting
+        label: Redirecting
+      - type: string
+        name: continue_reading
+        label: Continue Reading
+      - type: object
+        name: cookies_banner
+        label: Cookies Banner
+        fields:
+          - type: string
+            name: text
+            label: Text
+          - type: string
+            name: okay
+            label: Okay
+      - type: object
+        name: not_found
+        label: Not Found
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: text
+            name: message
+            label: Message
+          - type: string
+            name: home_link
+            label: Home Link
+      - type: object
+        name: offline
+        label: Offline
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: text
+            name: message
+            label: Message
+          - type: string
+            name: home_link
+            label: Home Link
+      - type: object
+        name: error
+        label: Error
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: string
+            name: message
+            label: Message
+      - type: string
+        name: posted
+        label: Posted
+      - type: string
+        name: last_modified_at
+        label: Last Modified At
+      - type: string
+        name: last_modified_at_icon
+        label: Last Modified At Icon
+      - type: string
+        name: colon
+        label: Colon
+      - type: string
+        name: separator
+        label: Separator
+      - type: string
+        name: category_start
+        label: Category Start
+      - type: string
+        name: category_spearator
+        label: Category Spearator
+      - type: string
+        name: tag_start
+        label: Tag Start
+      - type: string
+        name: tag_separator
+        label: Tag Separator
+      - type: string
+        name: from_to_separator
+        label: From To Separator
+      - type: string
+        name: breadcrumbs_home
+        label: Breadcrumbs Home
+      - type: string
+        name: breadcrumbs_separator
+        label: Breadcrumbs Separator
+      - type: object
+        name: date_formats
+        label: Date Formats
+        fields:
+          - type: string
+            name: post
+            label: Post
+          - type: string
+            name: last_modified_at
+            label: Last Modified At
+          - type: string
+            name: related_post
+            label: Related Post
+          - type: string
+            name: list_group_by
+            label: List Group By
+          - type: string
+            name: list_entry
+            label: List Entry
+          - type: string
+            name: project
+            label: Project
+          - type: string
+            name: projects_group_by
+            label: Projects Group By
+          - type: string
+            name: resume
+            label: Resume
+      - type: object
+        name: tinyletter
+        label: Tinyletter
+        fields:
+          - type: string
+            name: title
+            label: Title
+          - type: string
+            name: label
+            label: Label
+          - type: string
+            name: placeholder
+            label: Placeholder
+          - type: string
+            name: button
+            label: Button
+          - type: markdown
+            name: message
+            label: Message
+      - type: object
+        name: welcome
+        label: Welcome
+        fields:
+          - type: string
+            name: more_projects
+            label: More Projects
+          - type: string
+            name: more_posts
+            label: More Posts
+      - type: object
+        name: resume
+        label: Resume
+        fields:
+          - type: string
+            name: location
+            label: Location
+          - type: string
+            name: location_separator
+            label: Location Separator
+          - type: string
+            name: email
+            label: Email
+          - type: string
+            name: phone
+            label: Phone
+          - type: string
+            name: website
+            label: Website
+          - type: string
+            name: work
+            label: Work
+          - type: string
+            name: work_title
+            label: Work Title
+          - type: string
+            name: highlights
+            label: Highlights
+          - type: string
+            name: volunteer
+            label: Volunteer
+          - type: string
+            name: volunteer_title
+            label: Volunteer Title
+          - type: string
+            name: education
+            label: Education
+          - type: string
+            name: education_title
+            label: Education Title
+          - type: string
+            name: courses
+            label: Courses
+          - type: string
+            name: awards
+            label: Awards
+          - type: string
+            name: awards_title
+            label: Awards Title
+          - type: string
+            name: publications
+            label: Publications
+          - type: string
+            name: publications_title
+            label: Publications Title
+          - type: string
+            name: references
+            label: References
+          - type: string
+            name: languages
+            label: Languages
+          - type: string
+            name: fluency
+            label: Fluency
+          - type: string
+            name: skills
+            label: Skills
+          - type: string
+            name: level
+            label: Level
+          - type: string
+            name: interests
+            label: Interests
+          - type: string
+            name: summary
+            label: Summary
+          - type: string
+            name: keywords
+            label: Keywords
+          - type: string
+            name: print
+            label: Print
+          - type: string
+            name: download_pdf
+            label: Download Pdf
+          - type: string
+            name: download_vcf
+            label: Download Vcf
+          - type: string
+            name: download_json
+            label: Download Json
+          - type: object
+            name: icons
+            label: Icons
+            fields:
+              - type: string
+                name: fallback
+                label: Fallback
+              - type: string
+                name: location
+                label: Location
+              - type: string
+                name: born
+                label: Born
+              - type: string
+                name: citizenship
+                label: Citizenship
+              - type: string
+                name: maritalStatus
+                label: Marital Status
+              - type: string
+                name: email
+                label: Email
+              - type: string
+                name: phone
+                label: Phone
+              - type: string
+                name: website
+                label: Website
+              - type: string
+                name: work
+                label: Work
+              - type: string
+                name: volunteer
+                label: Volunteer
+              - type: string
+                name: education
+                label: Education
+              - type: string
+                name: awards
+                label: Awards
+              - type: string
+                name: publications
+                label: Publications
+              - type: string
+                name: references
+                label: References
+              - type: string
+                name: languages
+                label: Languages
+              - type: string
+                name: skills
+                label: Skills
+              - type: string
+                name: interests
+                label: Interests
+  variables:
+    type: data
+    label: Variables
+    file: variables.yml
+    fields:
+      - type: number
+        name: root_font_size
+        label: Root Font Size
+        subtype: int
+      - type: number
+        name: root_font_size_medium
+        label: Root Font Size Medium
+        subtype: int
+      - type: number
+        name: root_font_size_large
+        label: Root Font Size Large
+        subtype: int
+      - type: number
+        name: root_font_size_print
+        label: Root Font Size Print
+        subtype: int
+      - type: number
+        name: root_line_height
+        label: Root Line Height
+        subtype: float
+      - type: number
+        name: font_weight
+        label: Font Weight
+        subtype: int
+      - type: number
+        name: font_weight_bold
+        label: Font Weight Bold
+        subtype: int
+      - type: number
+        name: font_weight_heading
+        label: Font Weight Heading
+        subtype: int
+      - type: number
+        name: content_width
+        label: Content Width
+        subtype: int
+      - type: number
+        name: content_width_2
+        label: Content Width 2
+        subtype: int
+      - type: number
+        name: content_width_5
+        label: Content Width 5
+        subtype: int
+      - type: number
+        name: sidebar_width
+        label: Sidebar Width
+        subtype: int
+      - type: number
+        name: border_radius
+        label: Border Radius
+        subtype: float
+      - type: number
+        name: break_point_1
+        label: Break Point 1
+        subtype: int
+      - type: number
+        name: break_point_2
+        label: Break Point 2
+        subtype: int
+      - type: number
+        name: break_point_3
+        label: Break Point 3
+        subtype: int
+      - type: number
+        name: break_point_4
+        label: Break Point 4
+        subtype: int
+      - type: number
+        name: break_point_5
+        label: Break Point 5
+        subtype: int
+      - type: number
+        name: break_point_font_large
+        label: Break Point Font Large
+        subtype: int
